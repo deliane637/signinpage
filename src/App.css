@@ -1,0 +1,262 @@
+#root{
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: Grand Hotel, cursive;
+  font-weight: regular;
+}
+
+body {
+  background-color: #151416;
+  color:rgb(255, 255, 255);
+  text-align: center;
+}
+
+.login-container{
+  width: 100vw;
+  max-width: 1400PX;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #151416;
+  margin: auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left; 
+}
+
+@media (min-width: 768px){
+  .login-container{
+    grap: 1rem;
+  }
+}
+
+/* Header */
+.flearnaxy-header {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #151416;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.flearnaxy-contain{
+  width: 100%;
+  max-width: 1400PX;  
+  grap: 0.5rem;
+}
+
+.flearimg{
+  border-radius: 20px;
+}
+
+.logo-container {
+  height: 50px;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+  border-radius: 100px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.search-bar input {
+  flex: 1;
+  width:400px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #2D2D2E;
+  border-radius: 20px;
+  outline: none;
+  margin: 1px 20px;
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+  background-color: #151416;
+  color:rgb(240, 235, 245);
+  /* border: none; */
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin1{
+  padding-left: 1px;
+}
+.signup1{
+  padding-left: 10px;
+}
+
+fieldset{
+  border-radius: 50px;
+  width:95px;
+  height: 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #6e8efb, #a777e3, #ff6b6b);
+}
+
+/* Contenu principal */
+
+.flearimg{
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.signin-contain {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #151416;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1200px) {
+  .signin-contain {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+.signin-title {
+  font-size: 2rem;
+  color: #151416;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+}
+
+/* formulaire */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+input {
+  padding: 0.8rem 7.5rem;
+  /* border: 1px solid var(--medium-gray); */
+  border-radius: 4px;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* sign in button */
+.signin-button {
+  padding: 1rem;
+  background: linear-gradient(135deg, #6e8efb, #a777e3, #ff6b6b);  color: var(--medium-gray);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.signup-button:hover {
+  background-color: #5b21b6;
+}
+
+.captcha-text {
+  text-align: center;
+  font-family: Grand Hotel;
+  color: var(--dark-gray);
+  margin-top: 1rem;
+  size: 50px;
+}
+
+
+
+/* Social media */
+.social-login {
+  margin-top: 2rem;
+}
+
+.social-text {
+  text-align: center;
+  color: var(--light-gray);
+  margin-bottom: 1rem;
+  position: relative;
+  font-size: 25px;
+}
+
+.social-text::before,
+.social-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.social-text::before {
+  left: 0;
+}
+
+.social-text::after {
+  right: 0;
+}
+
+.social-buttons {
+  gap: 1rem;
+  justify-content: center;
+  width: 150px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #2D2D2E;
+  border-radius: 4px;
+  background-color: #2D2D2E;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 260px;
+  margin-top: 50px;
+}
+
+.social-button:hover {
+  background-color:rgb(239, 235, 238);
+  font: #000000;
+}
+
+.social-icon {
+  height: 30px;
+  width: auto;
+  align-items: center;
+}
+
+.apple .social-icon {
+  filter: brightness(0);
+}
+
