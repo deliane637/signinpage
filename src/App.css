@@ -17,42 +17,50 @@ body {
   text-align: center;
 }
 
-.login-container{
+.app-container{
   width: 100vw;
-  max-width: 1400PX;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
   background-color: #151416;
-  margin: auto; 
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  text-align: left; 
-}
-
-@media (min-width: 768px){
-  .login-container{
-    grap: 1rem;
-  }
 }
 
 /* Header */
 .flearnaxy-header {
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #151416;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-bottom: 1px solid #2D2D2E;
+}
+
+.header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #151416;
-  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .flearnaxy-contain{
-  width: 100%;
-  max-width: 1400PX;  
-  grap: 0.5rem;
+  font-family: 'Grand Hotel', cursive;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #8062AE, #B440B0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 1rem;
 }
 
 .flearimg{
@@ -77,12 +85,19 @@ body {
 
 .search-bar input {
   flex: 1;
-  width:400px;
+  width: 400px;
   padding: 0.5rem 1rem;
-  border: 1px solid #2D2D2E;
+  border: none;
   border-radius: 20px;
   outline: none;
   margin: 1px 20px;
+  background-color: #2D2D2E;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.search-bar input::placeholder {
+  color: #888;
 }
 
 .search-button {
@@ -106,10 +121,21 @@ body {
 
 fieldset{
   border-radius: 50px;
-  width:95px;
-  height: 30px;
+  width: 95px;
+  height: 35px;
   text-align: center;
-  background: linear-gradient(135deg, #6e8efb, #a777e3, #ff6b6b);
+  background: linear-gradient(135deg, #8062AE, #B440B0);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+fieldset p {
+  margin: 0;
+  color: white;
+  font-size: 0.9rem;
+  font-family: 'Grand Hotel', cursive;
 }
 
 /* Contenu principal */
@@ -121,11 +147,17 @@ fieldset{
 
 .signin-contain {
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 0 auto;
+  margin-top: 120px;
   padding: 2rem;
   background-color: #151416;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
 }
 
 @media (min-width: 1200px) {
@@ -135,12 +167,15 @@ fieldset{
   }
 }
 
-.signin-title {
-  font-size: 2rem;
-  color: #151416;
-  margin-bottom: 1.5rem;
+.logo-label {
+  font-size: 2.5rem;
+  font-family: 'Grand Hotel', cursive;
+  background: linear-gradient(135deg, #8062AE, #B440B0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
   text-align: center;
-
 }
 
 /* formulaire */
@@ -156,28 +191,45 @@ fieldset{
   gap: 1rem;
 }
 input {
-  padding: 0.8rem 7.5rem;
-  /* border: 1px solid var(--medium-gray); */
-  border-radius: 4px;
-  font-size: 1.1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
   width: 100%;
+  background-color: #2D2D2E;
+  color: #ffffff;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input::placeholder {
+  color: #888;
 }
 
 input:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border: 2px solid #8062AE;
 }
 
 /* sign in button */
 .signin-button {
   padding: 1rem;
-  background: linear-gradient(135deg, #6e8efb, #a777e3, #ff6b6b);  color: var(--medium-gray);
+  background: linear-gradient(135deg, #8062AE, #B440B0);
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 1rem;
-  font-weight: 600px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: 'Grand Hotel', cursive;
+}
+
+.signin-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(128, 98, 174, 0.3);
 }
 
 .signup-button:hover {
@@ -201,10 +253,10 @@ input:focus {
 
 .social-text {
   text-align: center;
-  color: var(--light-gray);
-  margin-bottom: 1rem;
+  color: #888;
+  margin-bottom: 1.5rem;
   position: relative;
-  font-size: 25px;
+  font-size: 0.9rem;
 }
 
 .social-text::before,
@@ -226,23 +278,28 @@ input:focus {
 }
 
 .social-buttons {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
-  width: 150px;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .social-button {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid #2D2D2E;
-  border-radius: 4px;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
   background-color: #2D2D2E;
   cursor: pointer;
   transition: all 0.2s;
-  width: 260px;
-  margin-top: 50px;
+  width: 100%;
+  color: white;
+  font-size: 1rem;
 }
 
 .social-button:hover {
@@ -260,3 +317,17 @@ input:focus {
   filter: brightness(0);
 }
 
+.forgotpwd {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.forgot {
+  color: #8062AE;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
