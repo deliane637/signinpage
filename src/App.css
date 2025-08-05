@@ -9,6 +9,7 @@
 
 body {
   background: #0a0a0b;
+  overflow-x: hidden;
 }
 
 /* Logo Area Styles*/
@@ -138,7 +139,7 @@ nav {
   justify-content: center;
   background: linear-gradient(135deg, #6e8efb, #a777e3, #ff6b6b);
   border-radius: 20px;
-  padding: 8px 20px;
+  padding: 6px 18px;
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 100px;
@@ -166,34 +167,200 @@ nav {
 
 
 
-/* App
- Container */
+/* Enhanced Galaxy Background */
+.galaxy-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  background:
+    radial-gradient(ellipse at center, rgba(120, 119, 198, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 107, 107, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 40% 40%, rgba(167, 119, 227, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse at 60% 20%, rgba(110, 142, 251, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a0b 0%, #1a1a2e 30%, #16213e 70%, #0f3460 100%);
+  animation: galaxyShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes galaxyShift {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(0.5deg) scale(1.02);
+  }
+
+  100% {
+    transform: rotate(-0.5deg) scale(1);
+  }
+}
+
+/* Nebula Clouds */
+.stars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(110, 142, 251, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 107, 107, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(167, 119, 227, 0.06) 0%, transparent 50%);
+  animation: nebulaDrift 30s linear infinite;
+}
+
+@keyframes nebulaDrift {
+  0% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+
+  50% {
+    transform: translateX(10px) translateY(5px);
+  }
+
+  100% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+}
+
+/* Enhanced Stars */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+  background:
+    /* Bright white stars */
+    radial-gradient(4px 4px at 50px 50px, #ffffff, transparent),
+    radial-gradient(3px 3px at 150px 100px, #ffffff, transparent),
+    radial-gradient(2px 2px at 250px 150px, #ffffff, transparent),
+    radial-gradient(4px 4px at 350px 80px, #ffffff, transparent),
+    radial-gradient(3px 3px at 450px 200px, #ffffff, transparent),
+    radial-gradient(2px 2px at 550px 120px, #ffffff, transparent),
+    radial-gradient(4px 4px at 650px 180px, #ffffff, transparent),
+    radial-gradient(3px 3px at 750px 60px, #ffffff, transparent),
+    radial-gradient(2px 2px at 850px 140px, #ffffff, transparent),
+    radial-gradient(4px 4px at 950px 90px, #ffffff, transparent),
+    /* Colored stars */
+    radial-gradient(3px 3px at 100px 30px, rgba(110, 142, 251, 1), transparent),
+    radial-gradient(2px 2px at 200px 80px, rgba(167, 119, 227, 1), transparent),
+    radial-gradient(3px 3px at 300px 130px, rgba(255, 107, 107, 1), transparent),
+    radial-gradient(2px 2px at 400px 40px, rgba(110, 142, 251, 1), transparent),
+    radial-gradient(3px 3px at 500px 170px, rgba(167, 119, 227, 1), transparent),
+    radial-gradient(2px 2px at 600px 70px, rgba(255, 107, 107, 1), transparent),
+    radial-gradient(3px 3px at 700px 110px, rgba(110, 142, 251, 1), transparent),
+    radial-gradient(2px 2px at 800px 160px, rgba(167, 119, 227, 1), transparent),
+    /* Small twinkling stars */
+    radial-gradient(1px 1px at 75px 25px, #ffffff, transparent),
+    radial-gradient(1px 1px at 175px 75px, #ffffff, transparent),
+    radial-gradient(1px 1px at 275px 125px, #ffffff, transparent),
+    radial-gradient(1px 1px at 375px 55px, #ffffff, transparent),
+    radial-gradient(1px 1px at 475px 105px, #ffffff, transparent),
+    radial-gradient(1px 1px at 575px 155px, #ffffff, transparent),
+    radial-gradient(1px 1px at 675px 35px, #ffffff, transparent),
+    radial-gradient(1px 1px at 775px 85px, #ffffff, transparent),
+    radial-gradient(1px 1px at 875px 135px, #ffffff, transparent);
+  background-repeat: repeat;
+  background-size: 1000px 200px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+/* Shooting Stars */
+.stars::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: shootingStar 8s linear infinite;
+}
+
+@keyframes shootingStar {
+  0% {
+    background: radial-gradient(2px 2px at -10px -10px, rgba(255, 255, 255, 0.8), transparent);
+  }
+
+  10% {
+    background: radial-gradient(2px 2px at 10% 10%, rgba(255, 255, 255, 0.8), transparent);
+  }
+
+  20% {
+    background: radial-gradient(2px 2px at 20% 20%, rgba(255, 255, 255, 0.6), transparent);
+  }
+
+  30% {
+    background: radial-gradient(2px 2px at 30% 30%, rgba(255, 255, 255, 0.4), transparent);
+  }
+
+  40% {
+    background: radial-gradient(2px 2px at 40% 40%, rgba(255, 255, 255, 0.2), transparent);
+  }
+
+  50% {
+    background: transparent;
+  }
+
+  100% {
+    background: transparent;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+/* App Container */
 .app-container {
   width: 100vw;
   min-height: 100vh;
-  background-color: #0a0a0b;
   display: flex;
   flex-direction: column;
   color: white;
+  position: relative;
+  background: transparent;
 }
 
 /* Signin Container */
 .signin-contain {
   max-width: 600px;
   margin: 0 auto;
-  margin-top: 120px;
   padding: 3rem 2rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(100vh - 120px);
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 90px;
 }
 
 /* Logo Label */
 .logo-label {
   font-family: "Grand Hotel", cursive;
-  font-size: 30px;
+  font-size: 48px;
   margin: 2px;
   font-weight: 400;
   background: linear-gradient(135deg, #6e8efb, #a777e3, #ff6b6b);
@@ -264,14 +431,93 @@ nav {
   text-decoration: underline;
 }
 
+/* Signup Link */
+.signup-link {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.signup-text {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.signup-link-text {
+  color: #8062AE;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.signup-link-text:hover {
+  color: #B440B0;
+  text-decoration: underline;
+}
+
+/* Signin Link (for signup page) */
+.signin-link {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.signin-text {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.signin-link-text {
+  color: #8062AE;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.signin-link-text:hover {
+  color: #B440B0;
+  text-decoration: underline;
+}
+
+/* Location Dropdown */
+.location-select {
+  padding: 1rem 1.5rem;
+  border: 2px solid #404040;
+  border-radius: 12px;
+  font-size: 1rem;
+  width: 100%;
+  min-width: 400px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.location-select:focus {
+  outline: none;
+  border: 2px solid #8062AE;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(128, 98, 174, 0.1);
+}
+
+.location-select:hover {
+  border-color: #555;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.location-select option {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
 /* Sign In Button */
 .signin-button {
-  padding: 1.2rem 2rem;
+  padding: 0.8rem 2rem;
   background: linear-gradient(135deg, #8062AE, #B440B0);
   color: white;
   border: none;
   border-radius: 12px;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -363,7 +609,7 @@ nav {
 }
 
 .social-icon {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .social-button.google .social-icon {
@@ -371,9 +617,7 @@ nav {
 }
 
 .social-button.apple .social-icon {
-  color: #000;
-  background: white;
-  border-radius: 3px;
+  color: #ffffff;
 }
 
 /* Responsive Design */

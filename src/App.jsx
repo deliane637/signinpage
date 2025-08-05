@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 import Navbar from './Navbar';
-import { RiGoogleFill, RiAppleFill } from 'react-icons/ri';
+import { FaGoogle, FaApple } from 'react-icons/fa';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -24,8 +25,12 @@ function App() {
 
   return (
     <div className="app-container">
+      {/* Simple Galaxy Background */}
+      <div className="galaxy-bg"></div>
+      <div className="stars"></div>
+
       {/* Header avec logo et barre de recherche */}
-      <Navbar/>
+      {/* <Navbar /> */}
 
       <main className="signin-contain">
         <div className="logo-label">Flearnaxy Sign in</div>
@@ -54,15 +59,19 @@ function App() {
           <button type='submit' className="signin-button">Sign In</button>
         </form>
 
+        <div className="signup-link">
+          <div className="signup-text">Don't have an account yet? <Link to="/signup" className="signup-link-text">Create one</Link></div>
+        </div>
+
         <div className="social-login">
           <div className="social-text">or continue with</div>
           <div className="social-buttons">
             <button className="social-button google">
-              <RiGoogleFill className="social-icon" />
+              <FaGoogle className="social-icon" />
               Google
             </button>
             <button className="social-button apple">
-              <RiAppleFill className="social-icon" />
+              <FaApple className="social-icon" />
               Apple
             </button>
           </div>
