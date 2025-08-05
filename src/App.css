@@ -604,8 +604,8 @@ nav {
 }
 
 .social-button.apple:hover {
-  border-color: #000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 .social-icon {
