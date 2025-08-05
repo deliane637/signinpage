@@ -622,16 +622,150 @@ nav {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .signin-contain {
-    margin: 100px 1rem 0;
-    padding: 2rem 1.5rem;
+  /* Navigation adjustments */
+  .nav {
+    min-width: auto;
+    padding: 0 1rem;
+  }
+  
+  .search-bar {
+    min-width: 300px;
+    padding: 10px 15px;
+  }
+  
+  .button {
+    padding: 6px 15px;
+    min-width: 80px;
+  }
+  
+  .create-text {
+    font-size: 16px;
   }
 
+  /* Main container adjustments */
+  .signin-contain {
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    padding-top: 100px;
+    max-width: 90%;
+    min-height: 100vh;
+  }
+
+  /* Logo/Title adjustments */
+  .logo-label {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Form adjustments */
+  .signin-form {
+    gap: 1.2rem;
+  }
+  
+  .form-section {
+    gap: 1rem;
+  }
+
+  /* Input field adjustments */
+  .signin-form input,
+  .location-select {
+    min-width: auto;
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  /* Name row for mobile */
+  .name-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .name-input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+  }
+
+  /* Button adjustments */
+  .signin-button {
+    min-width: auto;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  /* Social login adjustments */
+  .social-login {
+    margin-top: 2rem;
+  }
+  
   .social-buttons {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .social-button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .social-icon {
+    font-size: 1.4rem;
   }
 
+  /* Link text adjustments */
+  .signup-text,
+  .signin-text {
+    font-size: 1rem;
+  }
+  
+  .signup-link,
+  .signin-link {
+    margin: 1.2rem 0;
+  }
+  
+  .forgotpwd {
+    margin: 0.8rem 0;
+  }
+  
+  .forgot {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .signin-contain {
+    padding: 1.5rem 1rem;
+    padding-top: 90px;
+  }
+  
   .logo-label {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .signin-form input,
+  .location-select {
+    padding: 0.8rem 1rem;
+  }
+  
+  .signin-button {
+    padding: 0.9rem 1.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .social-button {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+  }
+  
+  .nav {
+    padding: 0 0.5rem;
+  }
+  
+  .search-bar {
+    min-width: 250px;
+    padding: 8px 12px;
   }
 }
