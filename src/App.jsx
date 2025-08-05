@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import flearnaxylogo from './assets/flearnaxylogo.jpeg';
-import flearnaxysignin from './assets/flearnaxysignup.jpeg';
-import flearnaxy from './assets/flearnaxy.jpeg';
+import Navbar from './Navbar';
+import { RiGoogleFill, RiAppleFill } from 'react-icons/ri';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -26,35 +25,7 @@ function App() {
   return (
     <div className="app-container">
       {/* Header avec logo et barre de recherche */}
-      <header className="flearnaxy-header">
-        <div className="header-content">
-          <div className="logo-container">
-            <img
-              src={flearnaxylogo}
-              alt="flearnaxy Logo"
-              className="logo"
-            />
-          </div>
-          <div className="flearnaxy-contain">
-            Flearnaxy
-          </div>
-          <div className="search-bar">
-            <input type="text" placeholder="Search flearnaxy" />
-          </div>
-          <div className="auth-buttons">
-            <div className="signin1">
-              <fieldset>
-                <p>signin</p>
-              </fieldset>
-            </div>
-            <div className="signup1">
-              <fieldset>
-                <p>signup</p>
-              </fieldset>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navbar/>
 
       <main className="signin-contain">
         <div className="logo-label">Flearnaxy Sign in</div>
@@ -86,21 +57,13 @@ function App() {
         <div className="social-login">
           <div className="social-text">or continue with</div>
           <div className="social-buttons">
-            <button className="social-button apple">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-                alt="Apple Logo"
-                className="social-icon"
-              />
-              Apple
-            </button>
             <button className="social-button google">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                alt="Google Logo"
-                className="social-icon"
-              />
+              <RiGoogleFill className="social-icon" />
               Google
+            </button>
+            <button className="social-button apple">
+              <RiAppleFill className="social-icon" />
+              Apple
             </button>
           </div>
         </div>
